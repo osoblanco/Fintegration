@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (4.0.1)
+  - Gloss (1.1.0)
+  - Moya (8.0.0-beta.2):
+    - Moya/Core (= 8.0.0-beta.2)
+  - Moya/Core (8.0.0-beta.2):
+    - Alamofire (~> 4.0.0)
+    - Result
+  - Moya/RxSwift (8.0.0-beta.2):
+    - Moya/Core
+    - RxSwift
+  - Result (3.0.0)
+  - RxCocoa (3.0.0-rc.1):
+    - RxSwift (~> 3.0.0-rc.1)
+  - RxDataSources (1.0.0-rc.2):
+    - RxCocoa (~> 3.0.0-rc.1)
+    - RxSwift (~> 3.0.0-rc.1)
+  - RxSwift (3.0.0-rc.1)
+
+DEPENDENCIES:
+  - Gloss (~> 1.0)
+  - Moya (= 8.0.0-beta.2)
+  - Moya/RxSwift
+  - RxCocoa (= 3.0.0-rc.1)
+  - RxDataSources (~> 1.0.0-rc.2)
+  - RxSwift (= 3.0.0-rc.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 74d374fe64125a2242759cf5516a45df58421239
+  Gloss: 35cf510722bf82c39a890fc548904f93acbfd25c
+  Moya: b7622461d89f8ef4e1549c8f69b042cb15237dee
+  Result: b2107e5a300584fc02ac73cd652c02ed74c546e3
+  RxCocoa: 7d2e83d12258c892ca41de321de3b91343e629bc
+  RxDataSources: eedf798b084562d245ef7f15758ccc7d78e46e51
+  RxSwift: 27650b77a577f6b8725f48b9d63ecaa7d4d651b3
+
+PODFILE CHECKSUM: 1b810c16914bb84c373f0201819aada51c25c40b
+
+COCOAPODS: 1.1.1
