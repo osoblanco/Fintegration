@@ -14,6 +14,19 @@ class StockCell: UITableViewCell {
     @IBOutlet weak var companyLbl: UILabel!
     @IBOutlet weak var infoLbl: UILabel!
     
+    var stockInfo: StockInfo? {
+        didSet{
+            guard let stock = stockInfo else {
+                return
+            }
+            symbolLbl.text = stock.symbol
+            companyLbl.text = stock.name
+            let exchange = stock.exchange
+            let assetType = stock.assetType
+            infoLbl.text = exchange + "  |  " + assetType
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

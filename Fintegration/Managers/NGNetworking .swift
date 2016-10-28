@@ -33,9 +33,9 @@ protocol NGNetworkingType {
     var provider: NGOnlineProvider<T> { get }
 }
 
-struct NGNetworking: NGNetworkingType {
-    typealias T = NGService
-    let provider: NGOnlineProvider<NGService>
+struct StockInfoNetworking: NGNetworkingType {
+    typealias T = StockInfoService
+    let provider: NGOnlineProvider<StockInfoService>
 }
 
 struct NGAuthorizedNetworking: NGNetworkingType {
@@ -44,8 +44,8 @@ struct NGAuthorizedNetworking: NGNetworkingType {
 }
 
 // "Public" interfaces
-extension NGNetworking {
-    func request(_ token: NGService, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
+extension StockInfoNetworking {
+    func request(_ token: StockInfoService, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
         return self.provider.request(token)
     }
 }
@@ -59,8 +59,8 @@ extension NGAuthorizedNetworking {
 // Static methods
 extension NGNetworkingType {
     
-    static func newDefaultNetworking() -> NGNetworking {
-        return NGNetworking(provider: newProvider([]))
+    static func newStockInfoNetworking() -> StockInfoNetworking {
+        return StockInfoNetworking(provider: newProvider([]))
     }
     
     static func newAuthorizedNetworking(_ accessToken: String) -> NGAuthorizedNetworking {
@@ -91,8 +91,8 @@ extension NGNetworkingType {
 }
 
 private func newProvider<T>(_ plugins: [PluginType], accessToken: String? = nil) -> NGOnlineProvider<T> where T: TargetType, T: NGServiceType {
-    return NGOnlineProvider(endpointClosure: NGNetworking.endpointsClosure(accessToken),
-                          requestClosure: NGNetworking.endpointResolver(),
+    return NGOnlineProvider(endpointClosure: StockInfoNetworking.endpointsClosure(accessToken),
+                          requestClosure: StockInfoNetworking.endpointResolver(),
                           stubClosure: {_ in Moya.StubBehavior.never},
                           plugins: plugins)
 }

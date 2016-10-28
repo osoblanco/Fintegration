@@ -73,11 +73,11 @@ protocol NGServiceType {
     
 }
 
-enum NGService: NGServiceType{
-    case Signin(username: String, password: String)
-    case Signup(username: String, password: String)
-    case UsernameAvailable(username: String)
+enum StockInfoService: NGServiceType{
+    case SearchStockInfo(query: String)
 }
+
+
 
 enum NGAuthenticatedService: NGServiceType {
     case Signout
@@ -85,24 +85,20 @@ enum NGAuthenticatedService: NGServiceType {
     case UpdateMe(firstname: String, lastname: String)
 }
 
-extension NGService: TargetType{
+extension StockInfoService: TargetType{
     var baseURL: URL {
-        return URL(string: "https://www.hhakobyan.com/nerdgasm/api/v1")!
+        return URL(string: "http://autoc.finance.yahoo.com")!
     }
     
     var path: String{
         switch self {
-        case .Signin(_, _):
-            return "/users/login"
-        case .Signup(_, _):
-            return "/users"
-        case .UsernameAvailable(_):
-            return "/users/username"
+        case .SearchStockInfo(_):
+            return "autoc"
         }
     }
     
     var method: Moya.Method {
-        return .POST
+        return .GET
     }
     
     var sampleData: Data {
@@ -111,12 +107,8 @@ extension NGService: TargetType{
     
     var parameters: [String: Any]? {
         switch self {
-        case .Signin(let username, let password):
-            return ["username" : username, "password" : password]
-        case .Signup(let username, let password):
-            return ["username" : username, "password" : password]
-        case .UsernameAvailable(let username):
-            return ["username" : username]
+        case .SearchStockInfo(let query):
+            return ["query" : query, "region" : 2, "lang" : "en"]
         }
     }
     

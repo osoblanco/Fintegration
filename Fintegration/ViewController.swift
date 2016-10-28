@@ -7,69 +7,79 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
-    var searchResults: [StockSearchResult] = []
+    let disposeBag = DisposeBag()
+    
+    private var latestQuery: Driver<String> {
+        return searchBar.rx.text
+            .throttle(0.4, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: "")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        activityIndicator.hidesWhenStopped = true
         self.automaticallyAdjustsScrollViewInsets = false
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UINib(nibName: "StockCell", bundle: Bundle.main), forCellReuseIdentifier: "stockCell")
         tableView.rowHeight = 60
-        searchBar.delegate = self
-    }
-    
-    
-    // *** Here's the important bit *** //
-    func searchYahooFinanceWithString(_ searchText: String) {
+        tableView.allowsMultipleSelection = false
         
-        SwiftStockKit.fetchStocksFromSearchTerm(term: searchText) { (stockInfoArray) -> () in
-            
-            self.searchResults = stockInfoArray
-            self.tableView.reloadData()
-            
-        }
-    
-    }
-    
-    // Search code
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let model = StockInfoSearchViewModel(query: latestQuery)
         
-        let length = searchText.characters.count
+        tableView
+            .rx.itemSelected
+            .subscribe { indexPath in
+                if self.searchBar.isFirstResponder == true {
+                    self.view.endEditing(true)
+                }
+                guard let cell: StockCell = self.tableView.cellForRow(at: indexPath.element!) as? StockCell else {
+                    return
+                }
+                guard let model = cell.stockInfo else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "details", sender: model.symbol)
+                }
+            }
+            .addDisposableTo(disposeBag)
         
-        if length > 0 {
-            searchYahooFinanceWithString(searchText)
-        } else {
-            searchResults.removeAll()
-            tableView.reloadData()
-        }
+        model.searching
+            .drive(activityIndicator.rx.animating)
+            .addDisposableTo(disposeBag)
         
+        model.cleanStocks
+            .drive(tableView.rx.items(cellIdentifier: "stockCell")) { index, model, cell in
+                let stoskCell = cell as! StockCell
+                stoskCell.stockInfo = model
+            }
+            .addDisposableTo(disposeBag)
+        
+        model.errors
+            .drive(onNext: { err in
+                print("Error \(err)")
+                }, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(disposeBag)
+        
+//        let tapBackground = UITapGestureRecognizer()
+//        tapBackground.rx.event
+//            .subscribe(onNext: { [weak self] _ in
+//                self?.view.endEditing(true)
+//                })
+//            .addDisposableTo(disposeBag)
+//        view.addGestureRecognizer(tapBackground)
     }
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.showsCancelButton = true
-        tableView.reloadData()
-        return true
-    }
-    
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.showsCancelButton = false
-        tableView.reloadData()
-        return true
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        searchBar.text = ""
-    }
-    
     
     //SearchBar stuff
     override func viewWillAppear(_ animated: Bool) {
@@ -105,36 +115,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    
     //TableView stuff
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "details", sender: self.searchResults[(indexPath as NSIndexPath).row].symbol!)
-        }
+      
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
-            cell.symbolLbl.text = searchResults[(indexPath as NSIndexPath).row].symbol
-            cell.companyLbl.text = searchResults[(indexPath as NSIndexPath).row].name
-            let exchange = searchResults[(indexPath as NSIndexPath).row].exchange!
-            let assetType = searchResults[(indexPath as NSIndexPath).row].assetType!
-            cell.infoLbl.text = exchange + "  |  " + assetType
-        
-        return cell
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "details" {
