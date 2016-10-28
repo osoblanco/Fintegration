@@ -7,17 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5FB6F5A1DC39C370018F4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FB6F591DC39C370018F4A2 /* AppDelegate.swift */; };
-		B5FB6F5C1DC39C370018F4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FB6F5B1DC39C370018F4A2 /* ViewController.swift */; };
+		54E974B11DC3E16F00003696 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974A71DC3E16F00003696 /* ChartView.swift */; };
+		54E974B21DC3E16F00003696 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974A81DC3E16F00003696 /* DetailViewController.swift */; };
+		54E974B31DC3E16F00003696 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54E974A91DC3E16F00003696 /* Info.plist */; };
+		54E974B41DC3E16F00003696 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974AA1DC3E16F00003696 /* StockCell.swift */; };
+		54E974B51DC3E16F00003696 /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54E974AB1DC3E16F00003696 /* StockCell.xib */; };
+		54E974B61DC3E16F00003696 /* StockDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974AC1DC3E16F00003696 /* StockDataCell.swift */; };
+		54E974B71DC3E16F00003696 /* StockDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54E974AD1DC3E16F00003696 /* StockDataCell.xib */; };
+		54E974B81DC3E16F00003696 /* SwiftStockKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974AE1DC3E16F00003696 /* SwiftStockKit.swift */; };
+		54E974B91DC3E16F00003696 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974AF1DC3E16F00003696 /* ViewController.swift */; };
+		54E974BB1DC3E1D500003696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974BA1DC3E1D500003696 /* AppDelegate.swift */; };
 		B5FB6F5F1DC39C390018F4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FB6F5D1DC39C390018F4A2 /* Main.storyboard */; };
 		B5FB6F611DC39C390018F4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FB6F601DC39C390018F4A2 /* Assets.xcassets */; };
 		B5FB6F641DC39C390018F4A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FB6F621DC39C390018F4A2 /* LaunchScreen.storyboard */; };
+		EC10A45C3C264EEC7F259075 /* Pods_Fintegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277C56D5388144039F64950C /* Pods_Fintegration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		057A791069237EF85D44E032 /* Pods-Fintegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fintegration/Pods-Fintegration.debug.xcconfig"; sourceTree = "<group>"; };
+		277C56D5388144039F64950C /* Pods_Fintegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fintegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E974A71DC3E16F00003696 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		54E974A81DC3E16F00003696 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		54E974A91DC3E16F00003696 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E974AA1DC3E16F00003696 /* StockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		54E974AB1DC3E16F00003696 /* StockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
+		54E974AC1DC3E16F00003696 /* StockDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockDataCell.swift; sourceTree = "<group>"; };
+		54E974AD1DC3E16F00003696 /* StockDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockDataCell.xib; sourceTree = "<group>"; };
+		54E974AE1DC3E16F00003696 /* SwiftStockKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftStockKit.swift; sourceTree = "<group>"; };
+		54E974AF1DC3E16F00003696 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54E974BA1DC3E1D500003696 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F0DA64BDE02F5A1557E3347 /* Pods-Fintegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fintegration/Pods-Fintegration.release.xcconfig"; sourceTree = "<group>"; };
 		B5FB6F561DC39C370018F4A2 /* Fintegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fintegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5FB6F591DC39C370018F4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5FB6F5B1DC39C370018F4A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5FB6F5E1DC39C390018F4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5FB6F601DC39C390018F4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5FB6F631DC39C390018F4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC10A45C3C264EEC7F259075 /* Pods_Fintegration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54B5F52E25435C884761AE5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				277C56D5388144039F64950C /* Pods_Fintegration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E01E023A511649709FD5345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				057A791069237EF85D44E032 /* Pods-Fintegration.debug.xcconfig */,
+				7F0DA64BDE02F5A1557E3347 /* Pods-Fintegration.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B5FB6F4D1DC39C350018F4A2 = {
 			isa = PBXGroup;
 			children = (
 				B5FB6F581DC39C370018F4A2 /* Fintegration */,
 				B5FB6F571DC39C370018F4A2 /* Products */,
+				9E01E023A511649709FD5345 /* Pods */,
+				54B5F52E25435C884761AE5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +94,16 @@
 		B5FB6F581DC39C370018F4A2 /* Fintegration */ = {
 			isa = PBXGroup;
 			children = (
-				B5FB6F591DC39C370018F4A2 /* AppDelegate.swift */,
-				B5FB6F5B1DC39C370018F4A2 /* ViewController.swift */,
+				54E974A71DC3E16F00003696 /* ChartView.swift */,
+				54E974A81DC3E16F00003696 /* DetailViewController.swift */,
+				54E974A91DC3E16F00003696 /* Info.plist */,
+				54E974AA1DC3E16F00003696 /* StockCell.swift */,
+				54E974AB1DC3E16F00003696 /* StockCell.xib */,
+				54E974AC1DC3E16F00003696 /* StockDataCell.swift */,
+				54E974AD1DC3E16F00003696 /* StockDataCell.xib */,
+				54E974AE1DC3E16F00003696 /* SwiftStockKit.swift */,
+				54E974AF1DC3E16F00003696 /* ViewController.swift */,
+				54E974BA1DC3E1D500003696 /* AppDelegate.swift */,
 				B5FB6F5D1DC39C390018F4A2 /* Main.storyboard */,
 				B5FB6F601DC39C390018F4A2 /* Assets.xcassets */,
 				B5FB6F621DC39C390018F4A2 /* LaunchScreen.storyboard */,
@@ -71,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5FB6F681DC39C390018F4A2 /* Build configuration list for PBXNativeTarget "Fintegration" */;
 			buildPhases = (
+				970047E1AEECDA80DBC42DFD /* [CP] Check Pods Manifest.lock */,
 				B5FB6F521DC39C370018F4A2 /* Sources */,
 				B5FB6F531DC39C370018F4A2 /* Frameworks */,
 				B5FB6F541DC39C370018F4A2 /* Resources */,
+				E5F8B527B707782A535EE0A9 /* [CP] Embed Pods Frameworks */,
+				6ABA14317F5D2A9043990F11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +147,7 @@
 				TargetAttributes = {
 					B5FB6F551DC39C370018F4A2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K6F93745LW;
+						DevelopmentTeam = 9BN49NND5Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,21 +175,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E974B31DC3E16F00003696 /* Info.plist in Resources */,
 				B5FB6F641DC39C390018F4A2 /* LaunchScreen.storyboard in Resources */,
+				54E974B51DC3E16F00003696 /* StockCell.xib in Resources */,
 				B5FB6F611DC39C390018F4A2 /* Assets.xcassets in Resources */,
+				54E974B71DC3E16F00003696 /* StockDataCell.xib in Resources */,
 				B5FB6F5F1DC39C390018F4A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6ABA14317F5D2A9043990F11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fintegration/Pods-Fintegration-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		970047E1AEECDA80DBC42DFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F8B527B707782A535EE0A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fintegration/Pods-Fintegration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5FB6F521DC39C370018F4A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5FB6F5C1DC39C370018F4A2 /* ViewController.swift in Sources */,
-				B5FB6F5A1DC39C370018F4A2 /* AppDelegate.swift in Sources */,
+				54E974B61DC3E16F00003696 /* StockDataCell.swift in Sources */,
+				54E974BB1DC3E1D500003696 /* AppDelegate.swift in Sources */,
+				54E974B91DC3E16F00003696 /* ViewController.swift in Sources */,
+				54E974B41DC3E16F00003696 /* StockCell.swift in Sources */,
+				54E974B21DC3E16F00003696 /* DetailViewController.swift in Sources */,
+				54E974B11DC3E16F00003696 /* ChartView.swift in Sources */,
+				54E974B81DC3E16F00003696 /* SwiftStockKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +364,14 @@
 		};
 		B5FB6F691DC39C390018F4A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 057A791069237EF85D44E032 /* Pods-Fintegration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K6F93745LW;
+				DEVELOPMENT_TEAM = 9BN49NND5Z;
 				INFOPLIST_FILE = Fintegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Futureview.Fintegration;
+				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -270,12 +379,14 @@
 		};
 		B5FB6F6A1DC39C390018F4A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F0DA64BDE02F5A1557E3347 /* Pods-Fintegration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K6F93745LW;
+				DEVELOPMENT_TEAM = 9BN49NND5Z;
 				INFOPLIST_FILE = Fintegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Futureview.Fintegration;
+				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -300,6 +411,7 @@
 				B5FB6F6A1DC39C390018F4A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
