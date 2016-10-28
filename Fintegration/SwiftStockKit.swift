@@ -30,6 +30,8 @@ struct StockSearchResult {
     var name: String?
     var exchange: String?
     var assetType: String?
+    
+    
 }
 
 struct Stock {
