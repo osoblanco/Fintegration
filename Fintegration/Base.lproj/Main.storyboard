@@ -1,26 +1,221 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HhY-WL-1e6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--SwiftStock-->
+        <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Fintegration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-1w-c40">
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="THu-c5-NcV">
+                                <color key="tintColor" red="0.49917685249999999" green="0.1944865352" blue="0.77761243390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="THu-c5-NcV" secondAttribute="trailing" constant="-16" id="1jY-23-14z"/>
+                            <constraint firstItem="THu-c5-NcV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="RL5-uH-vph"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LwT-1w-c40" secondAttribute="trailing" constant="-16" id="SFo-Mp-7ta"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LwT-1w-c40" secondAttribute="bottom" id="bUg-9H-VAw"/>
+                            <constraint firstItem="LwT-1w-c40" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="efN-Pw-lhw"/>
+                            <constraint firstItem="LwT-1w-c40" firstAttribute="top" secondItem="THu-c5-NcV" secondAttribute="bottom" id="sxd-2u-AWh"/>
+                            <constraint firstItem="THu-c5-NcV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="zdr-IE-SxB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="SwiftStock" id="z74-2B-Wej">
+                        <barButtonItem key="backBarButtonItem" title="  " id="wjr-c5-D3f"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="searchBar" destination="THu-c5-NcV" id="Rys-Fd-M1A"/>
+                        <outlet property="tableView" destination="LwT-1w-c40" id="uZS-h8-BCh"/>
+                        <outlet property="tableViewBottomConstraint" destination="bUg-9H-VAw" id="SGt-wG-oIQ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1156" y="242"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3S3-l3-Irk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HhY-WL-1e6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8rx-5p-Fqh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Cgg-Ow-Ej3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpR-Qm-JmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="242"/>
+        </scene>
+        <!--SwiftStock-->
+        <scene sceneID="Jfw-3p-pTF">
+            <objects>
+                <viewController storyboardIdentifier="detailViewController" id="jE8-k2-yLe" customClass="DetailViewController" customModule="Fintegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6JG-WP-QoD"/>
+                        <viewControllerLayoutGuide type="bottom" id="var-Z2-JBY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xGf-5w-6Dl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sc8-NL-OxK">
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="E7G-hg-tW4">
+                                    <size key="itemSize" width="185" height="44"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-X1-SFm">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4r-ai-aeK" customClass="ChartView" customModule="Fintegration" customModuleProvider="target">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="10V-p6-Crq">
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfI-ob-b4T">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="1D">
+                                                            <color key="titleColor" red="0.49917685249999999" green="0.1944865352" blue="0.77761243390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="wu2-mh-DFR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-xr-aHD">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="5D">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="hUK-iW-0E2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPT-d2-57X">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="10D">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="ZGi-4e-gal"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPT-rs-Q0Z">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="1M">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="WrE-TW-fQ3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-Wp-8er">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="3M">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="9NA-1w-cKz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1e0-ZS-2xE">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="1Y">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="8dq-4N-YM7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-dA-p4M">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <state key="normal" title="5Y">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeRangeBtnTapped:" destination="k4r-ai-aeK" eventType="touchUpInside" id="wZ3-DJ-8AQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.49917685249999999" green="0.1944865352" blue="0.77761243390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="10V-p6-Crq" firstAttribute="centerX" secondItem="k4r-ai-aeK" secondAttribute="centerX" id="LDM-aa-cZV"/>
+                                            <constraint firstItem="10V-p6-Crq" firstAttribute="leading" secondItem="k4r-ai-aeK" secondAttribute="leading" constant="10" id="PDR-xH-G8o"/>
+                                            <constraint firstAttribute="bottom" secondItem="10V-p6-Crq" secondAttribute="bottom" id="efP-id-XSl"/>
+                                        </constraints>
+                                    </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gCZ-kw-4qb"/>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gCZ-kw-4qb" firstAttribute="centerY" secondItem="I3M-X1-SFm" secondAttribute="centerY" id="4jw-DW-E5j"/>
+                                    <constraint firstAttribute="height" constant="250" id="7gO-6B-iwn"/>
+                                    <constraint firstItem="k4r-ai-aeK" firstAttribute="leading" secondItem="I3M-X1-SFm" secondAttribute="leading" id="CzV-5H-o0F"/>
+                                    <constraint firstItem="gCZ-kw-4qb" firstAttribute="centerX" secondItem="I3M-X1-SFm" secondAttribute="centerX" id="d3O-yj-Iaq"/>
+                                    <constraint firstItem="k4r-ai-aeK" firstAttribute="centerX" secondItem="I3M-X1-SFm" secondAttribute="centerX" id="rKz-2r-VuC"/>
+                                    <constraint firstItem="k4r-ai-aeK" firstAttribute="top" secondItem="I3M-X1-SFm" secondAttribute="top" id="rZU-dA-fIz"/>
+                                    <constraint firstItem="k4r-ai-aeK" firstAttribute="centerY" secondItem="I3M-X1-SFm" secondAttribute="centerY" id="uu4-kd-pD1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I3M-X1-SFm" firstAttribute="top" secondItem="6JG-WP-QoD" secondAttribute="bottom" id="LvM-Pv-Mb5"/>
+                            <constraint firstItem="var-Z2-JBY" firstAttribute="top" secondItem="sc8-NL-OxK" secondAttribute="bottom" id="Tnc-lQ-Xav"/>
+                            <constraint firstItem="I3M-X1-SFm" firstAttribute="centerX" secondItem="xGf-5w-6Dl" secondAttribute="centerX" id="VGy-Qa-3Bu"/>
+                            <constraint firstItem="sc8-NL-OxK" firstAttribute="top" secondItem="I3M-X1-SFm" secondAttribute="bottom" id="YI1-4u-tpo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sc8-NL-OxK" secondAttribute="trailing" constant="-16" id="YWV-WU-K8k"/>
+                            <constraint firstItem="sc8-NL-OxK" firstAttribute="leading" secondItem="xGf-5w-6Dl" secondAttribute="leadingMargin" constant="-16" id="rtj-ld-e1K"/>
+                            <constraint firstItem="I3M-X1-SFm" firstAttribute="leading" secondItem="xGf-5w-6Dl" secondAttribute="leading" id="uYW-IE-Lwh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SwiftStock" id="N8a-Yz-0MR"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gCZ-kw-4qb" id="4Xl-Cx-uuc"/>
+                        <outlet property="chartView" destination="k4r-ai-aeK" id="vYO-ke-Flh"/>
+                        <outlet property="collectionView" destination="sc8-NL-OxK" id="Hmp-R7-8v7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R57-hG-81V" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799.2" y="241.52923538230885"/>
         </scene>
     </scenes>
 </document>
