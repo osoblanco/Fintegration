@@ -108,11 +108,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //TableView stuff
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let controller: DetailViewController = storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
-        controller.stockSymbol = searchResults[(indexPath as NSIndexPath).row].symbol!
-        navigationController?.pushViewController(controller, animated: true)
-        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "details", sender: self.searchResults[(indexPath as NSIndexPath).row].symbol!)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -137,6 +135,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "details" {
+            let detailsVC = segue.destination as! DetailViewController
+            let stock = sender as! String
+            detailsVC.stockSymbol = stock
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

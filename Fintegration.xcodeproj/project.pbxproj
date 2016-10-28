@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54B7FB811DC3E8B6002B854A /* BotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FB801DC3E8B6002B854A /* BotViewController.swift */; };
+		54B7FB861DC3EB28002B854A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FB821DC3EB28002B854A /* ActivityIndicator.swift */; };
+		54B7FB871DC3EB28002B854A /* RxSwiftCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FB851DC3EB28002B854A /* RxSwiftCustom.swift */; };
+		54B7FB901DC3ED09002B854A /* NGNetworking .swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FB8E1DC3ED09002B854A /* NGNetworking .swift */; };
+		54B7FB911DC3ED09002B854A /* NGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FB8F1DC3ED09002B854A /* NGService.swift */; };
 		54E974B11DC3E16F00003696 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974A71DC3E16F00003696 /* ChartView.swift */; };
 		54E974B21DC3E16F00003696 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E974A81DC3E16F00003696 /* DetailViewController.swift */; };
 		54E974B31DC3E16F00003696 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54E974A91DC3E16F00003696 /* Info.plist */; };
@@ -26,6 +31,11 @@
 /* Begin PBXFileReference section */
 		057A791069237EF85D44E032 /* Pods-Fintegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fintegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fintegration/Pods-Fintegration.debug.xcconfig"; sourceTree = "<group>"; };
 		277C56D5388144039F64950C /* Pods_Fintegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fintegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54B7FB801DC3E8B6002B854A /* BotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotViewController.swift; sourceTree = "<group>"; };
+		54B7FB821DC3EB28002B854A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		54B7FB851DC3EB28002B854A /* RxSwiftCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftCustom.swift; sourceTree = "<group>"; };
+		54B7FB8E1DC3ED09002B854A /* NGNetworking .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NGNetworking .swift"; sourceTree = "<group>"; };
+		54B7FB8F1DC3ED09002B854A /* NGService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGService.swift; sourceTree = "<group>"; };
 		54E974A71DC3E16F00003696 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		54E974A81DC3E16F00003696 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		54E974A91DC3E16F00003696 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +74,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		54B7FB831DC3EB28002B854A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				54B7FB8E1DC3ED09002B854A /* NGNetworking .swift */,
+				54B7FB8F1DC3ED09002B854A /* NGService.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		54B7FB841DC3EB28002B854A /* RxSwift+Extra */ = {
+			isa = PBXGroup;
+			children = (
+				54B7FB851DC3EB28002B854A /* RxSwiftCustom.swift */,
+			);
+			path = "RxSwift+Extra";
+			sourceTree = "<group>";
+		};
 		9E01E023A511649709FD5345 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +121,9 @@
 		B5FB6F581DC39C370018F4A2 /* Fintegration */ = {
 			isa = PBXGroup;
 			children = (
+				54B7FB821DC3EB28002B854A /* ActivityIndicator.swift */,
+				54B7FB831DC3EB28002B854A /* Managers */,
+				54B7FB841DC3EB28002B854A /* RxSwift+Extra */,
 				54E974A71DC3E16F00003696 /* ChartView.swift */,
 				54E974A81DC3E16F00003696 /* DetailViewController.swift */,
 				54E974A91DC3E16F00003696 /* Info.plist */,
@@ -108,6 +138,7 @@
 				B5FB6F601DC39C390018F4A2 /* Assets.xcassets */,
 				B5FB6F621DC39C390018F4A2 /* LaunchScreen.storyboard */,
 				B5FB6F651DC39C390018F4A2 /* Info.plist */,
+				54B7FB801DC3E8B6002B854A /* BotViewController.swift */,
 			);
 			path = Fintegration;
 			sourceTree = "<group>";
@@ -243,9 +274,14 @@
 				54E974BB1DC3E1D500003696 /* AppDelegate.swift in Sources */,
 				54E974B91DC3E16F00003696 /* ViewController.swift in Sources */,
 				54E974B41DC3E16F00003696 /* StockCell.swift in Sources */,
+				54B7FB871DC3EB28002B854A /* RxSwiftCustom.swift in Sources */,
 				54E974B21DC3E16F00003696 /* DetailViewController.swift in Sources */,
 				54E974B11DC3E16F00003696 /* ChartView.swift in Sources */,
+				54B7FB811DC3E8B6002B854A /* BotViewController.swift in Sources */,
+				54B7FB911DC3ED09002B854A /* NGService.swift in Sources */,
+				54B7FB861DC3EB28002B854A /* ActivityIndicator.swift in Sources */,
 				54E974B81DC3E16F00003696 /* SwiftStockKit.swift in Sources */,
+				54B7FB901DC3ED09002B854A /* NGNetworking .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
