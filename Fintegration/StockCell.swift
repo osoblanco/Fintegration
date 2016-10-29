@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class StockCell: UITableViewCell {
 
     @IBOutlet weak var symbolLbl: UILabel!
     @IBOutlet weak var companyLbl: UILabel!
     @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var stockButton: UIButton!
+    @IBOutlet weak var predictionButton: UIButton!
     
+    let disposeBag = DisposeBag()
+   
     var stockInfo: StockInfo? {
         didSet{
             guard let stock = stockInfo else {
