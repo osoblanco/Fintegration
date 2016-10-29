@@ -200,7 +200,7 @@
 				TargetAttributes = {
 					B5FB6F551DC39C370018F4A2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K6F93745LW;
+						DevelopmentTeam = 9BN49NND5Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -427,11 +427,11 @@
 			baseConfigurationReference = 057A791069237EF85D44E032 /* Pods-Fintegration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K6F93745LW;
+				DEVELOPMENT_TEAM = 9BN49NND5Z;
 				INFOPLIST_FILE = Fintegration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fintu;
+				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -442,11 +442,11 @@
 			baseConfigurationReference = 7F0DA64BDE02F5A1557E3347 /* Pods-Fintegration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K6F93745LW;
+				DEVELOPMENT_TEAM = 9BN49NND5Z;
 				INFOPLIST_FILE = Fintegration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fintu;
+				PRODUCT_BUNDLE_IDENTIFIER = scrival.Fint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

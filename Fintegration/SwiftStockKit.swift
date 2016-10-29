@@ -121,8 +121,6 @@ class SwiftStockKit {
     
     class func fetchStockForSymbol(symbol: String, completion:@escaping (_ stock: Stock?) -> ()) {
         
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
-        
             let stockURL = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22\(symbol)%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json"
                     
             Alamofire.request(stockURL, method: .get).responseJSON { response in
@@ -220,13 +218,10 @@ class SwiftStockKit {
                     }
                 }
             }
-        }
     }
    
     class func fetchChartPoints(symbol: String, range: ChartTimeRange, completion:@escaping (_ chartPoints: [ChartPoint]) -> ()) {
     
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
-            
             //An Alamofire regular responseJSON wont parse the JSONP with a callback wrapper correctly, so lets work around that.
             let chartURL = SwiftStockKit.chartUrlForRange(symbol, range: range)
             
@@ -241,8 +236,11 @@ class SwiftStockKit {
                     
                     if let data = jsonString.data(using: String.Encoding.utf8.rawValue) {
                         if let resultJSON = (try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)))  as? [String : AnyObject] {
-                        
-                            let series = resultJSON["series"] as! [[String : AnyObject]]
+                            
+                            guard let series = resultJSON["series"] as? [[String : AnyObject]] else {
+                                completion([])
+                                return
+                            }
                             var chartPoints = [ChartPoint]()
                             for dataPoint in series {
                                 //GMT off by 5 hrs
@@ -267,7 +265,6 @@ class SwiftStockKit {
                     }
                 }
             }
-        }
     }
     
     class func chartUrlForRange(_ symbol: String, range: ChartTimeRange) -> String {
