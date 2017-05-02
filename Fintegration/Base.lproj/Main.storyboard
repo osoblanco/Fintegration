@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HhY-WL-1e6">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HhY-WL-1e6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -101,6 +101,38 @@
             </objects>
             <point key="canvasLocation" x="-396" y="-934"/>
         </scene>
+        <!--Prediction View Controller-->
+        <scene sceneID="A9p-bD-Jet">
+            <objects>
+                <viewController id="dkX-lF-8oP" customClass="PredictionViewController" customModule="Fintegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WWI-00-jzz"/>
+                        <viewControllerLayoutGuide type="bottom" id="zdE-VD-J4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uwz-l4-5TJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="8eo-pA-QWP">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zdE-VD-J4d" firstAttribute="top" secondItem="8eo-pA-QWP" secondAttribute="bottom" id="PIA-3J-d2i"/>
+                            <constraint firstItem="8eo-pA-QWP" firstAttribute="top" secondItem="WWI-00-jzz" secondAttribute="bottom" id="b6B-ug-SIz"/>
+                            <constraint firstItem="8eo-pA-QWP" firstAttribute="centerX" secondItem="Uwz-l4-5TJ" secondAttribute="centerX" id="l88-Qx-ikO"/>
+                            <constraint firstItem="8eo-pA-QWP" firstAttribute="leading" secondItem="Uwz-l4-5TJ" secondAttribute="leading" id="pFo-zd-pjI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8eo-pA-QWP" id="JGP-xU-ckI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiK-LH-SpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138.4000000000001" y="623.83808095952031"/>
+        </scene>
         <!--SwiftStock-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -117,7 +149,7 @@
                                 <color key="tintColor" red="0.49917685249999999" green="0.1944865352" blue="0.77761243390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-1w-c40">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-1w-c40">
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="itY-Po-L1A"/>
@@ -146,6 +178,7 @@
                         <outlet property="tableView" destination="LwT-1w-c40" id="uZS-h8-BCh"/>
                         <outlet property="tableViewBottomConstraint" destination="bUg-9H-VAw" id="SGt-wG-oIQ"/>
                         <segue destination="jE8-k2-yLe" kind="show" identifier="details" id="FCv-ic-95i"/>
+                        <segue destination="dkX-lF-8oP" kind="show" identifier="prediction" id="g47-OQ-3Fl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
